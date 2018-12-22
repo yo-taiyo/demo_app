@@ -4,7 +4,7 @@ from .models import Customers
 from sklearn.externals import joblib
 import numpy as np
 
-loaded_model = joblib.load('demo_app/demo_model.pkl') #defの中にいれない。グローバル変数のところで読み込まないと、関数呼ぶたびに読み込んでしまう。
+#loaded_model = joblib.load('demo_app/demo_model.pkl') #defの中にいれない。グローバル変数のところで読み込まないと、関数呼ぶたびに読み込んでしまう。
 loaded_model = joblib.load('/home/yitagaki/yitagaki.pythonanywhere.com/demo_app/demo_model.pkl') #pythonanywhereではパスが違うので。
 # Create your views here.
 
