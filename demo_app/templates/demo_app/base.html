@@ -4,14 +4,25 @@
     <!-- materialize CSSのCDN経由での読み込み -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Chart.jsの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <meta charset="utf-8">
     <title>{% block title %}Demo App_ローン審査{% endblock %}</title>
   </head>
-
   <body>
     <div class="col s12 card-panel teal lighten-2 ">
       <div class="row">
         <span class="white-text col s6" style="font-size:20px"><a href="/" style="color:white">ローン審査アプリ</a></span>
+
+<!-- ログアウト機能の追加 -->
+      {% if user.is_authenticated %}
+        <span class="col s6" style="font-size:20px; text-align: right;">
+          <a href="{% url 'logout' %}" style="color:white; text-decoration: underline;">
+          こんにちは、{{ user.username}}
+          </a>
+        </span>
+      {% endif %}
       </div>
     </div>
 
@@ -21,5 +32,8 @@
       {% endblock %}
 
     </div>
+    {% block script%}
+
+    {% endblock %}
   </body>
 </html>
