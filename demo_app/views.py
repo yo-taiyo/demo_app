@@ -9,7 +9,8 @@ loaded_model = joblib.load('demo_app/demo_model.pkl') #defの中にいれない�
 # Create your views here.
 
 def index(request):
-    return render(request, 'demo_app/index.html', {})
+    #return render(request, 'demo_app/index.html', {})
+    return render(request, '/home/yitagaki/yitagaki.pythonanywhere.com/demo_app', {}) #pythonanywhereではパスが違うので。
 
 def history(request):
     if request.method == 'POST': # POSTメソッドが送信された場合
